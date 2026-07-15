@@ -182,6 +182,22 @@ export interface TranslationMessages {
     leftoverIdli: string;
     leftoverSambar: string;
   };
+  assistant: {
+    title: string;
+    subtitle: string;
+    inputPlaceholder: string;
+    send: string;
+    clearHistory: string;
+    loading: string;
+    error: string;
+    insightsHeader: string;
+    insightsIntro: string;
+    insightsMeal: string;
+    insightsScore: string;
+    insightsAvoid: string;
+    insightsMissing: string;
+    welcome: string;
+  };
 }
 
 export const messages: Record<Language, TranslationMessages> = {
@@ -367,6 +383,22 @@ export const messages: Record<Language, TranslationMessages> = {
       leftoverIdli: "Repurposing: Leftover idlis can be crumbled to make Quick Idli Upma!",
       leftoverSambar: "Repurposing: Leftover lunch sambar can be served alongside dinner dosas to save prep time!",
     },
+    assistant: {
+      title: "AI Kitchen Assistant",
+      subtitle: "Bilingual culinary expert explaining recommendations, substitutions, and cooking tips.",
+      inputPlaceholder: "Ask about your recipes or ingredients...",
+      send: "Send",
+      clearHistory: "Clear Chat",
+      loading: "Assistant is typing...",
+      error: "Failed to connect to assistant. Please retry.",
+      insightsHeader: "Shared Context Panel",
+      insightsIntro: "The following structured data is provided to help the AI enhance your recommendations:",
+      insightsMeal: "Target Recipe",
+      insightsScore: "Rule Match Score",
+      insightsAvoid: "Avoid List",
+      insightsMissing: "Missing Ingredients",
+      welcome: "Hello! I am your South Indian Kitchen Assistant. I have analyzed your selected ingredients and preferences. Ask me anything about today's meal recommendations!",
+    },
   },
   ta: {
     nav: {
@@ -409,7 +441,7 @@ export const messages: Record<Language, TranslationMessages> = {
       subtitle: "சில நிமிடங்களில் முழுமையான வாராந்திர மெனுவை உருவாக்குவதற்கான எளிய வழிமுறைகள்.",
       step1Title: "1. விருப்பங்களைத் தேர்வு செய்யவும்",
       step1Desc: "காரத்தின் அளவு, சர்க்கரை நோய்க்கான தேர்வுகள் மற்றும் விரத நாட்களைக் குறிப்பிடவும்.",
-      step2Title: "2. தானியங்கி உணவுப் பரிந்துரை",
+      step2Title: "2. அதாவது உணவுப் பரிந்துரை",
       step2Desc: "பாரம்பரிய தென்னிந்திய முறைப்படி காலை, மதியம் மற்றும் இரவுக்கான உணவு ஆலோசனைகளைப் பெறுங்கள்.",
       step3Title: "3. மாற்றம் மற்றும் திருத்தம்",
       step3Desc: "பரிந்துரைக்கப்பட்ட உணவுகளை உங்கள் வீட்டில் உள்ள காய்கறிகளுக்கு ஏற்ப எளிதாக மாற்றிக்கொள்ளுங்கள்.",
@@ -549,6 +581,22 @@ export const messages: Record<Language, TranslationMessages> = {
       leftoverBoiledRice: "மறுபயன்பாடு: உங்களிடம் சமைத்த சாதம் மீதமுள்ளது. இதைக் கொண்டு தயிர் சாதம் அல்லது எலுமிச்சை சாதம் செய்யலாம்!",
       leftoverIdli: "மறுபயன்பாடு: மீதமுள்ள இட்லிகளை உதிர்த்து இட்லி உப்புமா செய்யலாம்!",
       leftoverSambar: "மறுபயன்பாடு: மதிய உணவு சாம்பாரை இரவு தோசையோடு தொட்டுக்கொண்டு நேரத்தைச் சேமிக்கலாம்!",
+    },
+    assistant: {
+      title: "AI சமையலறை உதவியாளர்",
+      subtitle: "பரிந்துரைகள், மாற்றுப் பொருட்கள் மற்றும் சமையல் குறிப்புகளை விளக்கும் இருமொழி நிபுணர்.",
+      inputPlaceholder: "உணவுகள் அல்லது சமையல் பொருட்கள் பற்றிக் கேளுங்கள்...",
+      send: "அனுப்பு",
+      clearHistory: "அரட்டையை அழி",
+      loading: "உதவியாளர் பதிலளிக்கிறார்...",
+      error: "இணைக்க முடியவில்லை. மீண்டும் முயற்சிக்கவும்.",
+      insightsHeader: "வழங்கப்பட்ட விவரங்கள்",
+      insightsIntro: "AI உதவியாளருக்குப் பரிந்துரைகளைத் தனிப்பயனாக்க பின்வரும் விவரங்கள் வழங்கப்பட்டுள்ளன:",
+      insightsMeal: "தேர்ந்தெடுக்கப்பட்ட உணவு",
+      insightsScore: "பொருத்தத்தின் அளவு",
+      insightsAvoid: "தவிர்க்கும் பட்டியல்",
+      insightsMissing: "இல்லாத பொருட்கள்",
+      welcome: "வணக்கம்! நான் உங்கள் தென்னிந்திய சமையல் உதவியாளர். உங்களது சமையல் விருப்பங்கள் மற்றும் பொருட்களை நான் ஆராய்ந்துள்ளேன். இன்றைய பரிந்துரைகள் பற்றி உங்களுக்கான கேள்விகளைக் கேளுங்கள்!",
     },
   },
 };

@@ -8,7 +8,7 @@ import { useLanguage } from '@/context/language-context';
 import { LanguageToggle } from '@/components/language-toggle';
 
 export const Navbar = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -18,6 +18,7 @@ export const Navbar = () => {
     { name: t.nav.planner, href: '/planner' },
     { name: t.nav.history, href: '/history' },
     { name: t.nav.preferences, href: '/preferences' },
+    { name: language === 'en' ? 'AI Assistant' : 'AI உதவியாளர்', href: '/assistant' },
   ];
 
   const isActive = (path: string) => pathname === path;
