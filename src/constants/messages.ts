@@ -198,6 +198,35 @@ export interface TranslationMessages {
     insightsMissing: string;
     welcome: string;
   };
+  weekly: {
+    title: string;
+    subtitle: string;
+    calendarHeader: string;
+    summaryHeader: string;
+    groceryHeader: string;
+    regenerateTooltip: string;
+    diversityScore: string;
+    utilizationRate: string;
+    totalGroceries: string;
+    days: {
+      monday: string;
+      tuesday: string;
+      wednesday: string;
+      thursday: string;
+      friday: string;
+      saturday: string;
+      sunday: string;
+    };
+    breakfastSlot: string;
+    lunchSlot: string;
+    dinnerSlot: string;
+    clearPlan: string;
+    emptyGrocery: string;
+    generateBtn: string;
+    diversityHigh: string;
+    diversityMedium: string;
+    diversityLow: string;
+  };
 }
 
 export const messages: Record<Language, TranslationMessages> = {
@@ -399,6 +428,35 @@ export const messages: Record<Language, TranslationMessages> = {
       insightsMissing: "Missing Ingredients",
       welcome: "Hello! I am your South Indian Kitchen Assistant. I have analyzed your selected ingredients and preferences. Ask me anything about today's meal recommendations!",
     },
+    weekly: {
+      title: "Weekly Meal Planner",
+      subtitle: "Generate and customize a 7-day Breakfast, Lunch, and Dinner plan with a smart missing grocery checklist.",
+      calendarHeader: "Weekly Calendar",
+      summaryHeader: "Weekly Curation Summary",
+      groceryHeader: "Required Missing Groceries",
+      regenerateTooltip: "Regenerate this meal slot",
+      diversityScore: "Recipe Diversity Index",
+      utilizationRate: "Kitchen Ingredients Reuse",
+      totalGroceries: "Total Grocery Items Needed",
+      days: {
+        monday: "Monday",
+        tuesday: "Tuesday",
+        wednesday: "Wednesday",
+        thursday: "Thursday",
+        friday: "Friday",
+        saturday: "Saturday",
+        sunday: "Sunday",
+      },
+      breakfastSlot: "Breakfast",
+      lunchSlot: "Lunch",
+      dinnerSlot: "Dinner",
+      clearPlan: "Clear Plan",
+      emptyGrocery: "No missing groceries! Your kitchen has all needed ingredients.",
+      generateBtn: "Generate Weekly Plan",
+      diversityHigh: "High Variety",
+      diversityMedium: "Moderate Variety",
+      diversityLow: "Repetitive (Needs Variety)",
+    },
   },
   ta: {
     nav: {
@@ -434,7 +492,7 @@ export const messages: Record<Language, TranslationMessages> = {
       card3Title: "சமையல் நேரக் குறைப்பு",
       card3Desc: "மதிய உணவின் காய்கறிகள் மற்றும் தயாரிப்புகளை அடிப்படையாகக் கொண்டு இரவு உணவைத் திட்டமிட்டு சமையல் நேரத்தைச் சேமிக்கிறது.",
       card4Title: "மளிகைப் பொருட்களின் பட்டியல்",
-      card4Desc: "தேவையான காய்கறிகள், மசாலாக்கள் மற்றும் மளிகைப் பொருட்களை வகைப்படுத்தி எளிமையான கொள்முதல் பட்டியலை வழங்குகிறது.",
+      card4Desc: "தேவையான காயறிகள், மசாலாக்கள் மற்றும் மளிகைப் பொருட்களை வகைப்படுத்தி எளிமையான கொள்முதல் பட்டியலை வழங்குகிறது.",
     },
     howItWorks: {
       title: "செயல்படும் முறை",
@@ -533,13 +591,13 @@ export const messages: Record<Language, TranslationMessages> = {
       dinner: "இரவு உணவு",
     },
     spices: {
-      low: "குறைவாக",
-      medium: "மிதமாக",
-      high: "அதிகமாக",
+      low: "Low",
+      medium: "Medium",
+      high: "High",
     },
     diets: {
-      veg: "சைவம்",
-      nonveg: "அசைவம்",
+      veg: "Vegetarian",
+      nonveg: "Non-Vegetarian",
     },
     recommendations: {
       title: "பரிந்துரைக்கப்பட்ட உணவுப் பட்டியல்",
@@ -597,6 +655,35 @@ export const messages: Record<Language, TranslationMessages> = {
       insightsAvoid: "தவிர்க்கும் பட்டியல்",
       insightsMissing: "இல்லாத பொருட்கள்",
       welcome: "வணக்கம்! நான் உங்கள் தென்னிந்திய சமையல் உதவியாளர். உங்களது சமையல் விருப்பங்கள் மற்றும் பொருட்களை நான் ஆராய்ந்துள்ளேன். இன்றைய பரிந்துரைகள் பற்றி உங்களுக்கான கேள்விகளைக் கேளுங்கள்!",
+    },
+    weekly: {
+      title: "வார உணவுத் திட்டமிடுபவர்",
+      subtitle: "காலை, மதியம், இரவு உணவிற்கான 7 நாள் உணவுத் திட்டத்தையும் தேவையான மளிகைப் பொருட்களின் பட்டியலையும் பெறுங்கள்.",
+      calendarHeader: "வார அட்டவணை",
+      summaryHeader: "வாராந்திர உணவுச் சுருக்கம்",
+      groceryHeader: "தேவைப்படும் மளிகைப் பொருட்கள் பட்டியல்",
+      regenerateTooltip: "இந்த உணவு வேளையை மாற்றுக",
+      diversityScore: "வாராந்திர உணவுப் பல்வகைமை",
+      utilizationRate: "பொருட்கள் மறுபயன்பாடு",
+      totalGroceries: "தேவைப்படும் மளிகைப் பொருட்கள் எண்ணிக்கை",
+      days: {
+        monday: "திங்கள்",
+        tuesday: "செவ்வாய்",
+        wednesday: "புதன்",
+        thursday: "வியாழன்",
+        friday: "வெள்ளி",
+        saturday: "சனி",
+        sunday: "ஞாயிறு",
+      },
+      breakfastSlot: "காலை உணவு",
+      lunchSlot: "மதிய உணவு",
+      dinnerSlot: "இரவு உணவு",
+      clearPlan: "திட்டத்தை நீக்கு",
+      emptyGrocery: "மளிகைப் பட்டியல் காலியாக உள்ளது! சமையலறையில் அனைத்து பொருட்களும் உள்ளன.",
+      generateBtn: "வாராந்திர உணவுத் திட்டம் உருவாக்கு",
+      diversityHigh: "அதிகப் பல்வகைமை",
+      diversityMedium: "மிதமான பல்வகைமை",
+      diversityLow: "ஒரே வகையான உணவு (மாற்றம் தேவை)",
     },
   },
 };
