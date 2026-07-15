@@ -2,6 +2,7 @@ import { Meal } from '@/constants/meals';
 import { RecentlyCookedMeal } from '@/hooks/use-preferences';
 import { kitchenInventory } from '@/constants/inventory';
 import { substitutions } from '@/constants/substitutions';
+import { InventoryItem } from '@/lib/inventory-manager';
 
 export interface SubstitutionRecommendation {
   missingIngredientId: string;
@@ -49,8 +50,11 @@ export const calculateDiversityScore = (history: RecentlyCookedMeal[]): number =
 export const getKitchenInsights = (
   meal: Meal,
   selectedIngredientIds: string[],
-  history: RecentlyCookedMeal[]
+  history: RecentlyCookedMeal[],
+  inventory?: InventoryItem[]
 ): KitchenInsights => {
+  const activeInventory = inventory || (kitchenInventory as unknown as InventoryItem[]);
+
   // 1. Calculate Utilization Rate
   const matchingSelected = selectedIngredientIds.filter((id) =>
     meal.requiredIngredientIds.includes(id)
@@ -68,7 +72,7 @@ export const getKitchenInsights = (
   const expiringAlerts: Array<{ ingredientId: string; priority: 'high' | 'medium' }> = [];
   selectedIngredientIds.forEach((id) => {
     if (!meal.requiredIngredientIds.includes(id)) {
-      const inv = kitchenInventory.find((item) => item.ingredientId === id);
+      const inv = activeInventory.find((item) => item.ingredientId === id);
       if (inv && (inv.expiryPriority === 'high' || inv.expiryPriority === 'medium')) {
         expiringAlerts.push({
           ingredientId: id,

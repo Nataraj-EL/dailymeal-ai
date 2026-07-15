@@ -3,6 +3,7 @@ import { UserPreferences } from '@/hooks/use-preferences';
 import { KitchenInsights, getKitchenInsights } from './kitchen-intelligence';
 import { getRecommendations } from './recommendation-engine';
 import { MealType } from '@/constants/preferences';
+import { InventoryItem } from '@/lib/inventory-manager';
 
 export interface AIContext {
   recommendedMeal: Meal | null;
@@ -19,7 +20,8 @@ export interface AIContext {
 export const buildAIContext = (
   selectedIngredients: string[],
   preferences: UserPreferences,
-  activeTab: MealType
+  activeTab: MealType,
+  inventory?: InventoryItem[]
 ): AIContext => {
   const recommendations = getRecommendations(selectedIngredients, preferences, activeTab);
   
@@ -34,7 +36,12 @@ export const buildAIContext = (
   }
 
   const topRec = recommendations[0];
-  const insights = getKitchenInsights(topRec.meal, selectedIngredients, preferences.recentlyCooked);
+  const insights = getKitchenInsights(
+    topRec.meal,
+    selectedIngredients,
+    preferences.recentlyCooked,
+    inventory
+  );
 
   return {
     recommendedMeal: topRec.meal,

@@ -12,6 +12,7 @@ import { GroceryList } from '@/components/grocery-list';
 import { PrimaryButton } from '@/components/primary-button';
 import { ArrowLeft, Sparkles, Trash2 } from 'lucide-react';
 import { MealType } from '@/constants/preferences';
+import { InventoryItem } from '@/lib/inventory-manager';
 
 export default function WeeklyPlannerPage() {
   const { t } = useLanguage();
@@ -51,13 +52,35 @@ export default function WeeklyPlannerPage() {
     }
   }, []);
 
-  const isLoaded = preferencesLoaded && ingredientsLoaded && planLoaded;
+  const [inventory, setInventory] = useState<InventoryItem[]>([]);
+  const [inventoryLoaded, setInventoryLoaded] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('dailymeal_inventory');
+      let loadedInventory = [];
+      if (saved) {
+        try {
+          loadedInventory = JSON.parse(saved);
+        } catch (e) {
+          console.error('Failed to parse inventory', e);
+        }
+      }
+      const timer = setTimeout(() => {
+        setInventory(loadedInventory);
+        setInventoryLoaded(true);
+      }, 0);
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
+  const isLoaded = preferencesLoaded && ingredientsLoaded && planLoaded && inventoryLoaded;
 
   // Compile grocery list dynamically from the plan using pure helper
   const groceryItems = useMemo(() => {
     if (!planResult) return [];
-    return generateGroceryList(planResult.plan, selectedIngredients);
-  }, [planResult, selectedIngredients]);
+    return generateGroceryList(planResult.plan, selectedIngredients, inventory);
+  }, [planResult, selectedIngredients, inventory]);
 
   const handleGenerate = () => {
     if (isLoaded) {

@@ -14,6 +14,7 @@ import { IngredientSubstitutions } from '@/components/ingredient-substitutions';
 import { KitchenInsights } from '@/components/kitchen-insights';
 import { Sparkles, ArrowLeft } from 'lucide-react';
 import { MealType } from '@/constants/preferences';
+import { InventoryItem } from '@/lib/inventory-manager';
 
 export default function RecommendationPage() {
   const { t } = useLanguage();
@@ -47,6 +48,28 @@ export default function RecommendationPage() {
     }
   }, []);
 
+  const [inventory, setInventory] = useState<InventoryItem[]>([]);
+  const [inventoryLoaded, setInventoryLoaded] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('dailymeal_inventory');
+      let loadedInventory = [];
+      if (saved) {
+        try {
+          loadedInventory = JSON.parse(saved);
+        } catch (e) {
+          console.error('Failed to parse inventory', e);
+        }
+      }
+      const timer = setTimeout(() => {
+        setInventory(loadedInventory);
+        setInventoryLoaded(true);
+      }, 0);
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
   // Compute recommendations dynamically using pure engine
   const recommendations = useMemo(() => {
     if (!preferencesLoaded || !ingredientsLoaded) return [];
@@ -67,9 +90,14 @@ export default function RecommendationPage() {
 
   // Compute kitchen intelligence insights on top of recommendation
   const insights = useMemo(() => {
-    if (!currentRecommendation) return null;
-    return getKitchenInsights(currentRecommendation.meal, selectedIngredients, preferences.recentlyCooked);
-  }, [currentRecommendation, selectedIngredients, preferences.recentlyCooked]);
+    if (!currentRecommendation || !inventoryLoaded) return null;
+    return getKitchenInsights(
+      currentRecommendation.meal,
+      selectedIngredients,
+      preferences.recentlyCooked,
+      inventory
+    );
+  }, [currentRecommendation, selectedIngredients, preferences.recentlyCooked, inventory, inventoryLoaded]);
 
   // List of alternatives (excluding current selected)
   const alternatives = useMemo(() => {

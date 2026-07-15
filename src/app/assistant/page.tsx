@@ -10,6 +10,7 @@ import { ChatInput } from '@/components/chat-input';
 import { AIInsights } from '@/components/ai-insights';
 import { Sparkles, Trash2 } from 'lucide-react';
 import { MealType } from '@/constants/preferences';
+import { InventoryItem } from '@/lib/inventory-manager';
 
 export default function AssistantPage() {
   const { t, language } = useLanguage();
@@ -40,15 +41,37 @@ export default function AssistantPage() {
     }
   }, []);
 
+  const [inventory, setInventory] = useState<InventoryItem[]>([]);
+  const [inventoryLoaded, setInventoryLoaded] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('dailymeal_inventory');
+      let loadedInventory = [];
+      if (saved) {
+        try {
+          loadedInventory = JSON.parse(saved);
+        } catch (e) {
+          console.error('Failed to parse inventory', e);
+        }
+      }
+      const timer = setTimeout(() => {
+        setInventory(loadedInventory);
+        setInventoryLoaded(true);
+      }, 0);
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
   const { messages, isLoading, error, sendMessage, clearHistory } = useChat();
 
-  const isLoaded = preferencesLoaded && ingredientsLoaded;
+  const isLoaded = preferencesLoaded && ingredientsLoaded && inventoryLoaded;
 
   // Build strict AIContext using pure context builder helper
   const aiContext = useMemo(() => {
     if (!isLoaded) return null;
-    return buildAIContext(selectedIngredients, preferences, activeTab);
-  }, [selectedIngredients, preferences, activeTab, isLoaded]);
+    return buildAIContext(selectedIngredients, preferences, activeTab, inventory);
+  }, [selectedIngredients, preferences, activeTab, isLoaded, inventory]);
 
   const handleSend = (text: string) => {
     if (aiContext) {

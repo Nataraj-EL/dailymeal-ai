@@ -227,6 +227,41 @@ export interface TranslationMessages {
     diversityMedium: string;
     diversityLow: string;
   };
+  inventory: {
+    title: string;
+    subtitle: string;
+    totalLabel: string;
+    lowStockLabel: string;
+    expiringLabel: string;
+    recentLabel: string;
+    searchPlaceholder: string;
+    filterCategory: string;
+    filterStock: string;
+    stockAll: string;
+    stockIn: string;
+    stockOut: string;
+    addIngredientBtn: string;
+    tableIngredient: string;
+    tableQuantity: string;
+    tableExpiry: string;
+    tableStock: string;
+    tableActions: string;
+    outOfStockBadge: string;
+    inStockBadge: string;
+    deleteConfirm: string;
+    editTitle: string;
+    addTitle: string;
+    dialogIngredientSelect: string;
+    dialogQuantityPlaceholder: string;
+    dialogSave: string;
+    dialogCancel: string;
+    errSelect: string;
+    errQty: string;
+    priorityLow: string;
+    priorityMedium: string;
+    priorityHigh: string;
+    noItems: string;
+  };
 }
 
 export const messages: Record<Language, TranslationMessages> = {
@@ -457,6 +492,41 @@ export const messages: Record<Language, TranslationMessages> = {
       diversityMedium: "Moderate Variety",
       diversityLow: "Repetitive (Needs Variety)",
     },
+    inventory: {
+      title: "Kitchen Inventory",
+      subtitle: "Track ingredient stock levels, expiration times, and mark items out of stock.",
+      totalLabel: "Total Ingredients",
+      lowStockLabel: "Low Stock",
+      expiringLabel: "Expiring Soon",
+      recentLabel: "Recently Updated",
+      searchPlaceholder: "Search inventory (e.g. Tomato)...",
+      filterCategory: "All Categories",
+      filterStock: "All Stock",
+      stockAll: "All Items",
+      stockIn: "In Stock Only",
+      stockOut: "Out of Stock Only",
+      addIngredientBtn: "Add Ingredient",
+      tableIngredient: "Ingredient",
+      tableQuantity: "Quantity",
+      tableExpiry: "Expiry Priority",
+      tableStock: "Stock Status",
+      tableActions: "Actions",
+      outOfStockBadge: "Out of Stock",
+      inStockBadge: "In Stock",
+      deleteConfirm: "Are you sure you want to delete this ingredient?",
+      editTitle: "Edit Inventory Item",
+      addTitle: "Add Inventory Item",
+      dialogIngredientSelect: "Select Ingredient",
+      dialogQuantityPlaceholder: "e.g. 500g, 1 kg, 2 bunches",
+      dialogSave: "Save Item",
+      dialogCancel: "Cancel",
+      errSelect: "Please select an ingredient",
+      errQty: "Quantity is required",
+      priorityLow: "Low Priority",
+      priorityMedium: "Medium Priority",
+      priorityHigh: "High Priority",
+      noItems: "No ingredients found in inventory matching your filters.",
+    },
   },
   ta: {
     nav: {
@@ -684,6 +754,41 @@ export const messages: Record<Language, TranslationMessages> = {
       diversityHigh: "அதிகப் பல்வகைமை",
       diversityMedium: "மிதமான பல்வகைமை",
       diversityLow: "ஒரே வகையான உணவு (மாற்றம் தேவை)",
+    },
+    inventory: {
+      title: "சமையலறை இருப்பு",
+      subtitle: "சமையல் பொருட்களின் அளவுகள், காலாவதியாகும் நேரம் மற்றும் இருப்பு நிலைகளை நிர்வகிக்கவும்.",
+      totalLabel: "மொத்த பொருட்கள்",
+      lowStockLabel: "குறைந்த இருப்பு",
+      expiringLabel: "விரைவில் காலாவதியாகும்",
+      recentLabel: "சமீபத்தில் புதுப்பிக்கப்பட்டவை",
+      searchPlaceholder: "இருப்பில் தேடுக (உதாரணம்: தக்காளி)...",
+      filterCategory: "அனைத்து பிரிவுகள்",
+      filterStock: "இருப்பு நிலை",
+      stockAll: "அனைத்து பொருட்கள்",
+      stockIn: "இருப்பில் உள்ளவை மட்டும்",
+      stockOut: "இருப்பு இல்லாதவை மட்டும்",
+      addIngredientBtn: "பொருளைச் சேர்",
+      tableIngredient: "சமையல் பொருள்",
+      tableQuantity: "அளவு",
+      tableExpiry: "காலாவதி முன்னுரிமை",
+      tableStock: "இருப்பு நிலை",
+      tableActions: "செயல்கள்",
+      outOfStockBadge: "இருப்பில் இல்லை",
+      inStockBadge: "இருப்பில் உள்ளது",
+      deleteConfirm: "இந்தப் பொருளை இருப்பிலிருந்து நீக்க வேண்டுமா?",
+      editTitle: "இருப்பு விவரங்களைத் திருத்தவும்",
+      addTitle: "இருப்பில் புதிய பொருளைச் சேர்",
+      dialogIngredientSelect: "பொருளைத் தேர்ந்தெடுக்கவும்",
+      dialogQuantityPlaceholder: "உதாரணம்: 500g, 1 kg, 2 கட்டுகள்",
+      dialogSave: "விவரங்களைச் சேமி",
+      dialogCancel: "ரத்து செய்",
+      errSelect: "தயவுசெய்து ஒரு பொருளைத் தேர்ந்தெடுக்கவும்",
+      errQty: "பொருளின் அளவு தேவை",
+      priorityLow: "குறைந்த முன்னுரிமை",
+      priorityMedium: "மிதமான முன்னுரிமை",
+      priorityHigh: "அதிக முன்னுரிமை",
+      noItems: "இருப்பில் உங்கள் வடிகட்டிகளுக்குப் பொருத்தமான பொருட்கள் எதுவும் இல்லை.",
     },
   },
 };

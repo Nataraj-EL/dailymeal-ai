@@ -19,6 +19,7 @@ export const Navbar = () => {
     { name: language === 'en' ? 'Weekly Planner' : 'வார உணவுத் திட்டம்', href: '/planner/weekly' },
     { name: t.nav.history, href: '/history' },
     { name: t.nav.preferences, href: '/preferences' },
+    { name: language === 'en' ? 'Inventory' : 'இருப்பு', href: '/inventory' },
     { name: language === 'en' ? 'AI Assistant' : 'AI உதவியாளர்', href: '/assistant' },
   ];
 

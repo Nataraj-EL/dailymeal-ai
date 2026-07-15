@@ -2,6 +2,7 @@ import { WeeklyPlan } from './weekly-planner';
 import { ingredients } from '@/constants/ingredients';
 import { kitchenInventory } from '@/constants/inventory';
 import { MealType } from '@/constants/preferences';
+import { InventoryItem } from '@/lib/inventory-manager';
 
 export interface GroceryItem {
   id: string;
@@ -56,8 +57,10 @@ const multiplyAndFormatQuantity = (baseQty: string, multiplier: number): string 
  */
 export const generateGroceryList = (
   plan: WeeklyPlan,
-  selectedIngredients: string[]
+  selectedIngredients: string[],
+  inventory?: InventoryItem[]
 ): GroceryItem[] => {
+  const activeInventory = inventory || (kitchenInventory as unknown as InventoryItem[]);
   const ingredientOccurrences: Record<string, number> = {};
 
   // 1. Gather all required ingredients and count their occurrences in the weekly plan
@@ -81,7 +84,7 @@ export const generateGroceryList = (
     if (selectedIngredients.includes(id)) return;
 
     const ing = ingredients.find((i) => i.id === id);
-    const inv = kitchenInventory.find((item) => item.ingredientId === id);
+    const inv = activeInventory.find((item) => item.ingredientId === id);
 
     if (!ing) return;
 
