@@ -5,8 +5,13 @@ import Link from 'next/link';
 import { useLanguage } from '@/context/language-context';
 import { usePreferences } from '@/hooks/use-preferences';
 import { getRecommendations } from '@/lib/recommendation-engine';
+import { getKitchenInsights } from '@/lib/kitchen-intelligence';
 import { RecommendationCard } from '@/components/recommendation-card';
 import { PrimaryButton } from '@/components/primary-button';
+import { UtilizationCard } from '@/components/utilization-card';
+import { DiversityIndicator } from '@/components/diversity-indicator';
+import { IngredientSubstitutions } from '@/components/ingredient-substitutions';
+import { KitchenInsights } from '@/components/kitchen-insights';
 import { Sparkles, ArrowLeft } from 'lucide-react';
 import { MealType } from '@/constants/preferences';
 
@@ -59,6 +64,12 @@ export default function RecommendationPage() {
   
   // Selected recommendation
   const currentRecommendation = recommendations[selectedRecIndex];
+
+  // Compute kitchen intelligence insights on top of recommendation
+  const insights = useMemo(() => {
+    if (!currentRecommendation) return null;
+    return getKitchenInsights(currentRecommendation.meal, selectedIngredients, preferences.recentlyCooked);
+  }, [currentRecommendation, selectedIngredients, preferences.recentlyCooked]);
 
   // List of alternatives (excluding current selected)
   const alternatives = useMemo(() => {
@@ -117,9 +128,37 @@ export default function RecommendationPage() {
         <div id={`panel-${activeTab}`} role="tabpanel" aria-labelledby={`tab-${activeTab}`}>
           {hasRecommendations ? (
             <div className="grid lg:grid-cols-12 gap-8 items-start">
-              {/* Top Recommendation details */}
+              {/* Top Recommendation details & Insights dashboard */}
               <div className="lg:col-span-8 space-y-6">
                 <RecommendationCard recommendation={currentRecommendation} />
+                
+                {insights && (
+                  <div className="space-y-4 pt-2">
+                    <span className="text-[10px] font-extrabold text-muted-foreground uppercase tracking-widest block leading-none">
+                      Kitchen Intelligence Insights
+                    </span>
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      <UtilizationCard utilizationPercentage={insights.utilizationPercentage} />
+                      <DiversityIndicator diversityScore={insights.diversityScore} />
+                    </div>
+
+                    {(insights.substitutions.length > 0 || 
+                      insights.expiringAlerts.length > 0 || 
+                      insights.leftoverSuggestions.length > 0) && (
+                      <div className="grid sm:grid-cols-2 gap-4 items-start">
+                        {insights.substitutions.length > 0 && (
+                          <IngredientSubstitutions substitutions={insights.substitutions} />
+                        )}
+                        {(insights.expiringAlerts.length > 0 || insights.leftoverSuggestions.length > 0) && (
+                          <KitchenInsights 
+                            expiringAlerts={insights.expiringAlerts}
+                            leftoverSuggestions={insights.leftoverSuggestions}
+                          />
+                        )}
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
 
               {/* Side Alternative list */}
@@ -128,7 +167,7 @@ export default function RecommendationPage() {
                   <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider block">
                     {t.recommendations.alternativeMatches}
                   </span>
-                  <div className="space-y-3 max-h-[500px] overflow-y-auto pr-1">
+                  <div className="space-y-3 max-h-[600px] overflow-y-auto pr-1">
                     {alternatives.map(({ rec, index }) => (
                       <RecommendationCard
                         key={rec.meal.id}

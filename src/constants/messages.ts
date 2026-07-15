@@ -164,6 +164,24 @@ export interface TranslationMessages {
     highIngredientMatch: string;
     noHistoryConflict: string;
   };
+  insights: {
+    utilizationTitle: string;
+    utilizationDesc: string;
+    diversityTitle: string;
+    diversityDesc: string;
+    diversityLevelHigh: string;
+    diversityLevelMedium: string;
+    diversityLevelLow: string;
+    expiringTitle: string;
+    expiringDesc: string;
+    leftoversTitle: string;
+    substitutionsTitle: string;
+    substitutionsDesc: string;
+    substituteNote: string;
+    leftoverBoiledRice: string;
+    leftoverIdli: string;
+    leftoverSambar: string;
+  };
 }
 
 export const messages: Record<Language, TranslationMessages> = {
@@ -331,6 +349,24 @@ export const messages: Record<Language, TranslationMessages> = {
       highIngredientMatch: "Uses a high percentage of your selected ingredients",
       noHistoryConflict: "Prevents repetition (not cooked recently)",
     },
+    insights: {
+      utilizationTitle: "Selected Ingredients Utilization",
+      utilizationDesc: "Percentage of your active selected ingredients used in this recipe.",
+      diversityTitle: "Weekly Meal Diversity Index",
+      diversityDesc: "Measures recipe variety based on your cooked meal logs.",
+      diversityLevelHigh: "High Diversity",
+      diversityLevelMedium: "Moderate Diversity",
+      diversityLevelLow: "Repetitive (Needs Variety)",
+      expiringTitle: "Highly Perishable Alerts",
+      expiringDesc: "These items are expiring soon and are NOT utilized in this meal. Consider adding them as sides:",
+      leftoversTitle: "Leftover Smart Repurposing",
+      substitutionsTitle: "Ingredient Substitution Tips",
+      substitutionsDesc: "You can swap missing items in this recipe with available ingredients:",
+      substituteNote: "Substitute note",
+      leftoverBoiledRice: "Repurposing: You have cooked rice in logs. Great opportunity to make Curd Rice or Lemon Rice!",
+      leftoverIdli: "Repurposing: Leftover idlis can be crumbled to make Quick Idli Upma!",
+      leftoverSambar: "Repurposing: Leftover lunch sambar can be served alongside dinner dosas to save prep time!",
+    },
   },
   ta: {
     nav: {
@@ -495,6 +531,24 @@ export const messages: Record<Language, TranslationMessages> = {
       timeMatch: "உங்கள் அதிகபட்ச சமையல் நேர வரம்பிற்குள் சமைக்கலாம்",
       highIngredientMatch: "தேர்ந்தெடுத்த பொருட்களின் பெரும்பாலான அளவைக் கொண்டுள்ளது",
       noHistoryConflict: "சமீபத்தில் சமைக்கப்படவில்லை (சுழற்சி முறைப் பொருத்தம்)",
+    },
+    insights: {
+      utilizationTitle: "தேர்ந்தெடுத்த பொருட்களின் பயன்பாடு",
+      utilizationDesc: "நீங்கள் தேர்ந்தெடுத்த பொருட்களில் இந்த ரெசிபியில் பயன்படுத்தப்படும் அளவு.",
+      diversityTitle: "வாராந்திர உணவுப் பல்வகைமை",
+      diversityDesc: "நீங்கள் சமைத்த உணவுகளின் பதிவைக்கொண்டு உணவு சுழற்சியை அளவிடுகிறது.",
+      diversityLevelHigh: "அதிகப் பல்வகைமை",
+      diversityLevelMedium: "மிதமான பல்வகைமை",
+      diversityLevelLow: "ஒரே வகையான உணவு (மாற்றம் தேவை)",
+      expiringTitle: "விரைவில் கெடக்கூடிய பொருட்கள்",
+      expiringDesc: "சமையலறையில் உள்ள இந்த பொருட்கள் விரைவில் கெடக்கூடியவை ஆனால் இந்த உணவில் பயன்படுத்தப்படவில்லை. இவற்றைக் கூட்டாகச் சமைக்கலாம்:",
+      leftoversTitle: "மீதமுள்ள உணவைப் பயன்படுத்துதல்",
+      substitutionsTitle: "மாற்றுப் பொருட்கள் குறிப்புகள்",
+      substitutionsDesc: "தேவைப்படும் சில பொருட்களுக்குப் பதிலாக உங்களிடம் உள்ள மாற்றுப் பொருட்களைப் பயன்படுத்தலாம்:",
+      substituteNote: "மாற்றுப் பொருள் குறிப்பு",
+      leftoverBoiledRice: "மறுபயன்பாடு: உங்களிடம் சமைத்த சாதம் மீதமுள்ளது. இதைக் கொண்டு தயிர் சாதம் அல்லது எலுமிச்சை சாதம் செய்யலாம்!",
+      leftoverIdli: "மறுபயன்பாடு: மீதமுள்ள இட்லிகளை உதிர்த்து இட்லி உப்புமா செய்யலாம்!",
+      leftoverSambar: "மறுபயன்பாடு: மதிய உணவு சாம்பாரை இரவு தோசையோடு தொட்டுக்கொண்டு நேரத்தைச் சேமிக்கலாம்!",
     },
   },
 };
