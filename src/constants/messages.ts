@@ -87,6 +87,60 @@ export interface TranslationMessages {
     protein: string;
     spices_pantry: string;
   };
+  preferences: {
+    title: string;
+    subtitle: string;
+    dietLabel: string;
+    dietDesc: string;
+    avoidLabel: string;
+    avoidDesc: string;
+    spiceLabel: string;
+    spiceDesc: string;
+    timeLabel: string;
+    timeDesc: string;
+    familyLabel: string;
+    familyDesc: string;
+    historyLabel: string;
+    historyDesc: string;
+    addMeal: string;
+    continueCTA: string;
+    summaryHeader: string;
+    noHistory: string;
+    summaryDiet: string;
+    summarySpice: string;
+    summaryTime: string;
+    summarySize: string;
+    summaryAvoid: string;
+    none: string;
+  };
+  dialog: {
+    titleAdd: string;
+    titleEdit: string;
+    dishLabel: string;
+    dishPlaceholder: string;
+    typeLabel: string;
+    dateLabel: string;
+    ratingLabel: string;
+    save: string;
+    cancel: string;
+    errName: string;
+    errDate: string;
+    errFuture: string;
+  };
+  mealTypes: {
+    breakfast: string;
+    lunch: string;
+    dinner: string;
+  };
+  spices: {
+    low: string;
+    medium: string;
+    high: string;
+  };
+  diets: {
+    veg: string;
+    nonveg: string;
+  };
 }
 
 export const messages: Record<Language, TranslationMessages> = {
@@ -177,6 +231,60 @@ export const messages: Record<Language, TranslationMessages> = {
       protein: "Protein & Lentils",
       spices_pantry: "Spices & Pantry",
     },
+    preferences: {
+      title: "Household Preferences",
+      subtitle: "Customize dietary preferences, spice settings, and update what you have recently cooked.",
+      dietLabel: "Dietary Preference",
+      dietDesc: "Select your household diet type.",
+      avoidLabel: "Avoided Ingredients",
+      avoidDesc: "Toggle ingredients to exclude from planned recommendations.",
+      spiceLabel: "Spice Tolerance Level",
+      spiceDesc: "Configure seasoning thresholds for curry recipes.",
+      timeLabel: "Maximum Cooking Duration",
+      timeDesc: "Preferred preparation time window.",
+      familyLabel: "Household Size",
+      familyDesc: "Specify total dinner portions to scale ingredients.",
+      historyLabel: "Recently Cooked Log",
+      historyDesc: "Keep track of recently prepared meals to avoid menu repetitions.",
+      addMeal: "Add Cooked Meal",
+      continueCTA: "Generate Recommendation",
+      summaryHeader: "Preference Summary",
+      noHistory: "No meals logged recently. Add a dish to get started.",
+      summaryDiet: "Diet",
+      summarySpice: "Spice Level",
+      summaryTime: "Prep Duration",
+      summarySize: "Family Members",
+      summaryAvoid: "Avoided Ingredients",
+      none: "None",
+    },
+    dialog: {
+      titleAdd: "Add Cooked Meal",
+      titleEdit: "Edit Cooked Meal",
+      dishLabel: "Dish Name",
+      dishPlaceholder: "e.g. Tomato Sambar, Idli",
+      typeLabel: "Meal Type",
+      dateLabel: "Date Cooked",
+      ratingLabel: "Rating",
+      save: "Save Details",
+      cancel: "Cancel",
+      errName: "Dish name is required",
+      errDate: "Date cooked is required",
+      errFuture: "Date cannot be in the future",
+    },
+    mealTypes: {
+      breakfast: "Breakfast",
+      lunch: "Lunch",
+      dinner: "Dinner",
+    },
+    spices: {
+      low: "Low",
+      medium: "Medium",
+      high: "High",
+    },
+    diets: {
+      veg: "Vegetarian",
+      nonveg: "Non-Vegetarian",
+    },
   },
   ta: {
     nav: {
@@ -264,6 +372,60 @@ export const messages: Record<Language, TranslationMessages> = {
       dairy: "பால் பொருட்கள்",
       protein: "பருப்பு & புரதங்கள்",
       spices_pantry: "மசாலா & மளிகை",
+    },
+    preferences: {
+      title: "குடும்ப உணவு விருப்பங்கள்",
+      subtitle: "காரத்தின் அளவு, சமையல் நேரம் மற்றும் சமீபத்தில் சமைத்த உணவு வகைகளைத் தனிப்பயனாக்கவும்.",
+      dietLabel: "உணவுப் பழக்கம்",
+      dietDesc: "உங்கள் குடும்பத்தின் உணவு வகையைத் தேர்ந்தெடுக்கவும்.",
+      avoidLabel: "தவிர்க்க வேண்டிய பொருட்கள்",
+      avoidDesc: "உணவுப் பரிந்துரைகளில் தவிர்க்க வேண்டிய பொருட்களைத் தேர்வு செய்யவும்.",
+      spiceLabel: "காரத்தின் அளவு",
+      spiceDesc: "சமையல் ரெசிபிகளுக்கான காரத்தின் அளவை அமைக்கவும்.",
+      timeLabel: "அதிகபட்ச சமையல் நேரம்",
+      timeDesc: "விருப்பமான தயாரிப்பு நேர அளவு.",
+      familyLabel: "குடும்ப உறுப்பினர்களின் எண்ணிக்கை",
+      familyDesc: "தேவையான காய்கறிகளின் அளவைக் கணக்கிட உதவக்கூடியது.",
+      historyLabel: "சமீபத்தில் சமைத்த உணவுகள்",
+      historyDesc: "சமைத்த உணவு முறைகளை மீண்டும் திரும்பச் சமைப்பதைத் தவிர்க்க இங்கு பதிவிடவும்.",
+      addMeal: "சமைத்த உணவைச் சேர்",
+      continueCTA: "உணவுப் பரிந்துரையைப் பெறுக",
+      summaryHeader: "தேர்வுகளின் சுருக்கம்",
+      noHistory: "சமீபத்திய உணவுகள் எதுவும் சேர்க்கப்படவில்லை. தொடங்குவதற்கு ஒரு உணவைச் சேர்க்கவும்.",
+      summaryDiet: "உணவு முறை",
+      summarySpice: "கார அளவு",
+      summaryTime: "சமையல் நேரம்",
+      summarySize: "உறுப்பினர்கள் எண்ணிக்கை",
+      summaryAvoid: "தவிர்க்க வேண்டியவை",
+      none: "எதுவுமில்லை",
+    },
+    dialog: {
+      titleAdd: "சமைத்த உணவைச் சேர்",
+      titleEdit: "பதிவைத் திருத்தவும்",
+      dishLabel: "உணவின் பெயர்",
+      dishPlaceholder: "உதாரணம்: தக்காளி சாம்பார், இட்லி",
+      typeLabel: "உணவு வேளை",
+      dateLabel: "சமைத்த தேதி",
+      ratingLabel: "மதிப்பீடு",
+      save: "சேமிக்கவும்",
+      cancel: "ரத்து செய்",
+      errName: "உணவின் பெயர் தேவை",
+      errDate: "சமைத்த தேதி தேவை",
+      errFuture: "தேதி எதிர்காலமாக இருக்கக்கூடாது",
+    },
+    mealTypes: {
+      breakfast: "காலை உணவு",
+      lunch: "மதிய உணவு",
+      dinner: "இரவு உணவு",
+    },
+    spices: {
+      low: "குறைவாக",
+      medium: "மிதமாக",
+      high: "அதிகமாக",
+    },
+    diets: {
+      veg: "சைவம்",
+      nonveg: "அசைவம்",
     },
   },
 };
