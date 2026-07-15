@@ -141,6 +141,29 @@ export interface TranslationMessages {
     veg: string;
     nonveg: string;
   };
+  recommendations: {
+    title: string;
+    subtitle: string;
+    matchScore: string;
+    confidenceLabel: string;
+    confidenceHigh: string;
+    confidenceMedium: string;
+    confidenceLow: string;
+    requiredIngredients: string;
+    whyRecommended: string;
+    noRecommendationsTitle: string;
+    noRecommendationsDesc: string;
+    alternativeMatches: string;
+    matchesTitle: string;
+    missingTitle: string;
+    backToPlanner: string;
+  };
+  reasons: {
+    dietMatch: string;
+    timeMatch: string;
+    highIngredientMatch: string;
+    noHistoryConflict: string;
+  };
 }
 
 export const messages: Record<Language, TranslationMessages> = {
@@ -285,6 +308,29 @@ export const messages: Record<Language, TranslationMessages> = {
       veg: "Vegetarian",
       nonveg: "Non-Vegetarian",
     },
+    recommendations: {
+      title: "Recommended Kitchen Menu",
+      subtitle: "Rule-based South Indian recommendations based on your selected ingredients and preferences.",
+      matchScore: "Match Score",
+      confidenceLabel: "Confidence",
+      confidenceHigh: "High Match",
+      confidenceMedium: "Medium Match",
+      confidenceLow: "Low Match",
+      requiredIngredients: "Required Ingredients Checklist",
+      whyRecommended: "Why this recommendation?",
+      noRecommendationsTitle: "Not Enough Ingredients Selected",
+      noRecommendationsDesc: "We could not find any South Indian recipes matching your selected ingredients. Go back and select more items (such as rice, lentils, or vegetables).",
+      alternativeMatches: "Alternative Recommendations",
+      matchesTitle: "Available",
+      missingTitle: "Missing",
+      backToPlanner: "Change Ingredients",
+    },
+    reasons: {
+      dietMatch: "Matches your dietary preference",
+      timeMatch: "Fits within your maximum cooking time limit",
+      highIngredientMatch: "Uses a high percentage of your selected ingredients",
+      noHistoryConflict: "Prevents repetition (not cooked recently)",
+    },
   },
   ta: {
     nav: {
@@ -426,6 +472,29 @@ export const messages: Record<Language, TranslationMessages> = {
     diets: {
       veg: "சைவம்",
       nonveg: "அசைவம்",
+    },
+    recommendations: {
+      title: "பரிந்துரைக்கப்பட்ட உணவுப் பட்டியல்",
+      subtitle: "தேர்ந்தெடுத்த பொருட்கள் மற்றும் குடும்ப விருப்பங்களின் அடிப்படையில் தென்னிந்திய உணவுப் பரிந்துரைகள்.",
+      matchScore: "பொருத்தத்தின் அளவு",
+      confidenceLabel: "பொருத்த வகை",
+      confidenceHigh: "அதிகப் பொருத்தம்",
+      confidenceMedium: "மிதமான பொருத்தம்",
+      confidenceLow: "குறைந்த பொருத்தம்",
+      requiredIngredients: "தேவையான பொருட்கள் பட்டியல்",
+      whyRecommended: "ஏன் இந்தப் பரிந்துரை?",
+      noRecommendationsTitle: "பொருட்கள் எதுவும் தேர்ந்தெடுக்கப்படவில்லை",
+      noRecommendationsDesc: "நீங்கள் தேர்ந்தெடுத்த பொருட்களுக்குப் பொருத்தமான பாரம்பரிய தென்னிந்திய உணவு வகைகள் எதுவும் கிடைக்கவில்லை. பின்சென்று கூடுதல் பொருட்களைத் தேர்ந்தெடுக்கவும் (அரிசி, பருப்பு அல்லது காய்கறிகள்).",
+      alternativeMatches: "மாற்று உணவுப் பரிந்துரைகள்",
+      matchesTitle: "உள்ளவை",
+      missingTitle: "இல்லாதவை",
+      backToPlanner: "பொருட்களை மாற்றவும்",
+    },
+    reasons: {
+      dietMatch: "உங்கள் உணவுப் பழக்கத்தோடு பொருந்துகிறது",
+      timeMatch: "உங்கள் அதிகபட்ச சமையல் நேர வரம்பிற்குள் சமைக்கலாம்",
+      highIngredientMatch: "தேர்ந்தெடுத்த பொருட்களின் பெரும்பாலான அளவைக் கொண்டுள்ளது",
+      noHistoryConflict: "சமீபத்தில் சமைக்கப்படவில்லை (சுழற்சி முறைப் பொருத்தம்)",
     },
   },
 };
