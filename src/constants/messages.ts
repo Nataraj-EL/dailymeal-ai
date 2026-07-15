@@ -70,6 +70,23 @@ export interface TranslationMessages {
     title: string;
     desc: string;
   };
+  planner: {
+    title: string;
+    subtitle: string;
+    searchPlaceholder: string;
+    noIngredientsFound: string;
+    clearAll: string;
+    selectedCount: string;
+    selectedHeader: string;
+    continueCTA: string;
+  };
+  categories: {
+    vegetables: string;
+    grains: string;
+    dairy: string;
+    protein: string;
+    spices_pantry: string;
+  };
 }
 
 export const messages: Record<Language, TranslationMessages> = {
@@ -143,6 +160,23 @@ export const messages: Record<Language, TranslationMessages> = {
       title: "Dietary Preferences",
       desc: "Manage spice defaults, Vratham options, onion/garlic exclusions, and preferred grocery outlets in this centralized panel.",
     },
+    planner: {
+      title: "Select Your Ingredients",
+      subtitle: "Select the ingredients you have available in your kitchen today to curate a balanced traditional menu.",
+      searchPlaceholder: "Search ingredients (e.g. Tomato, கடுகு)...",
+      noIngredientsFound: "No ingredients found matching your search.",
+      clearAll: "Clear All",
+      selectedCount: "selected",
+      selectedHeader: "Selected Ingredients",
+      continueCTA: "Continue to Meal Planning",
+    },
+    categories: {
+      vegetables: "Vegetables",
+      grains: "Grains",
+      dairy: "Dairy",
+      protein: "Protein & Lentils",
+      spices_pantry: "Spices & Pantry",
+    },
   },
   ta: {
     nav: {
@@ -161,12 +195,12 @@ export const messages: Record<Language, TranslationMessages> = {
     },
     hero: {
       title: "தென்னிந்திய உணவுத் திட்டமிடல், இனி மிக எளிது",
-      subtitle: "உங்கள் குடும்பத்தின் விருப்பத்திற்கேற்ப ஊட்டச்சத்துக்கள் நிறைந்த சாம்பார், ரசம், கூட்டு, மற்றும் பொரியல் உணவு அட்டவணைகளைத் திட்டமிடுங்கள்.",
-      tagline: "ஆரோக்கியமான வீட்டு சமையலறைகளுக்கான புத்திசாலித்தனமான உணவுத் திட்டம்",
+      subtitle: "உங்கள் குடும்பத்தின் விருப்பத்திற்கேற்ப உணவு அட்டவணைகளைத் திட்டமிடுங்கள்.",
+      tagline: "சமையலறைகளுக்கான உணவுத் திட்டம்",
     },
     intro: {
       title: "தினசரி சமையலறை குழப்பங்களுக்கு முற்றுப்புள்ளி",
-      description: "தினமும் காலை, மதியம் மற்றும் இரவு உணவிற்கு என்ன சமைப்பது என்று முடிவெடுப்பது ஒரு பெரிய சவாலாகும். டெய்லிமீல் AI பாரம்பரிய தென்னிந்திய உணவு முறைகளை மதித்து, பருப்பு வகைகள், காயறிகள் மற்றும் தானியங்களைச் சமநிலைப்படுத்தி, சமையலை எளிதாக்குகிறது.",
+      description: "தினமும் காலை, மதியம் மற்றும் இரவு உணவிற்கு என்ன சமைப்பது என்று முடிவெடுப்பது ஒரு பெரிய சவாலாகும். டெய்லிமீல் AI பாரம்பரிய தென்னிந்திய உணவு முறைகளை மதித்து சமையலை எளிதாக்குகிறது.",
     },
     features: {
       title: "தென்னிந்திய குடும்பங்களுக்காக வடிவமைக்கப்பட்டது",
@@ -213,6 +247,23 @@ export const messages: Record<Language, TranslationMessages> = {
     preferencesPlaceholder: {
       title: "உணவு விருப்பங்கள்",
       desc: "காரத்தின் அளவு, விரத நாட்கள், வெங்காயம்/பூண்டு தவிர்ப்பு மற்றும் மளிகைக் கடை விருப்பங்களை இந்த மத்திய கட்டுப்பாட்டுப் பலகத்தில் நிர்வகிக்கலாம்.",
+    },
+    planner: {
+      title: "தேவையான பொருட்களைத் தேர்ந்தெடுக்கவும்",
+      subtitle: "வழக்கமான சமையல் மெனுவைத் தயாரிக்க உங்கள் சமையலறையில் உள்ள காய்கறிகள் மற்றும் மளிகைப் பொருட்களைத் தேர்வு செய்யவும்.",
+      searchPlaceholder: "தேடுங்கள் (உதாரணம்: தக்காளி, கடுகு)...",
+      noIngredientsFound: "நீங்கள் தேடிய வார்த்தைக்குப் பொருட்கள் எதுவும் கிடைக்கவில்லை.",
+      clearAll: "அனைத்தையும் நீக்கு",
+      selectedCount: "தேர்ந்தெடுக்கப்பட்டது",
+      selectedHeader: "தேர்ந்தெடுக்கப்பட்ட பொருட்கள்",
+      continueCTA: "திட்டமிடலைத் தொடரவும்",
+    },
+    categories: {
+      vegetables: "காய்கறிகள்",
+      grains: "தானியங்கள்",
+      dairy: "பால் பொருட்கள்",
+      protein: "பருப்பு & புரதங்கள்",
+      spices_pantry: "மசாலா & மளிகை",
     },
   },
 };
