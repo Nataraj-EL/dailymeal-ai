@@ -319,7 +319,7 @@ export const messages: Record<Language, TranslationMessages> = {
     },
     footer: {
       text: "DailyMeal AI - Standardizing South Indian meal coordination.",
-      rights: "© 2026 DailyMeal AI. All rights reserved.",
+      rights: "© 2026 NATARAJ EL. ALL RIGHTS RESERVED.",
       privacy: "Privacy Policy",
       terms: "Terms of Service",
     },
@@ -582,7 +582,7 @@ export const messages: Record<Language, TranslationMessages> = {
     },
     footer: {
       text: "டெய்லிமீல் AI - தென்னிந்திய சமையல் உணவு ஒருங்கிணைப்பு.",
-      rights: "© 2026 டெய்லிமீல் AI. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.",
+      rights: "© 2026 NATARAJ EL. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.",
       privacy: "தனியுரிமைக் கொள்கை",
       terms: "சேவை விதிமுறைகள்",
     },
