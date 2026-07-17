@@ -262,6 +262,26 @@ export interface TranslationMessages {
     priorityHigh: string;
     noItems: string;
   };
+  recipe: {
+    prepTime: string;
+    cookingTime: string;
+    servings: string;
+    difficulty: string;
+    difficultyEasy: string;
+    difficultyMedium: string;
+    difficultyHard: string;
+    nutritionHeader: string;
+    calories: string;
+    protein: string;
+    carbs: string;
+    fat: string;
+    instructions: string;
+    chefTips: string;
+    storageTips: string;
+    showRecipe: string;
+    hideRecipe: string;
+    viewRecipeTitle: string;
+  };
 }
 
 export const messages: Record<Language, TranslationMessages> = {
@@ -527,6 +547,26 @@ export const messages: Record<Language, TranslationMessages> = {
       priorityHigh: "High Priority",
       noItems: "No ingredients found in inventory matching your filters.",
     },
+    recipe: {
+      prepTime: "Prep Time",
+      cookingTime: "Cooking Time",
+      servings: "Servings",
+      difficulty: "Difficulty",
+      difficultyEasy: "Easy",
+      difficultyMedium: "Medium",
+      difficultyHard: "Hard",
+      nutritionHeader: "Nutrition Facts",
+      calories: "Calories",
+      protein: "Protein",
+      carbs: "Carbohydrates",
+      fat: "Fat",
+      instructions: "Step-by-Step Instructions",
+      chefTips: "Chef Tips & Secrets",
+      storageTips: "Storage & Leftover Reuse",
+      showRecipe: "Show Recipe Details",
+      hideRecipe: "Hide Recipe Details",
+      viewRecipeTitle: "Recipe Knowledge Base",
+    },
   },
   ta: {
     nav: {
@@ -789,6 +829,26 @@ export const messages: Record<Language, TranslationMessages> = {
       priorityMedium: "நடுத்தர முன்னுரிமை",
       priorityHigh: "உயர் முன்னுரிமை",
       noItems: "உங்கள் வடிகட்டலுக்குப் பொருத்தமான பொருட்கள் இருப்பில் எதுவும் இல்லை.",
+    },
+    recipe: {
+      prepTime: "தயாரிப்பு நேரம்",
+      cookingTime: "சமையல் நேரம்",
+      servings: "நபர்கள்",
+      difficulty: "சிரம நிலை",
+      difficultyEasy: "எளிது",
+      difficultyMedium: "நடுத்தரம்",
+      difficultyHard: "கடினம்",
+      nutritionHeader: "ஊட்டச்சத்து விவரங்கள்",
+      calories: "கலோரிகள்",
+      protein: "புரதம்",
+      carbs: "கார்போஹைட்ரேட்",
+      fat: "கொழுப்பு",
+      instructions: "சமையல் செய்முறை விளக்கம்",
+      chefTips: "சமையல் குறிப்புகள் & ரகசியங்கள்",
+      storageTips: "சேமிப்பு & மறுபயன்பாடு",
+      showRecipe: "சமையல் செய்முறையைக் காட்டு",
+      hideRecipe: "செய்முறையை மறை",
+      viewRecipeTitle: "சமையல் செய்முறை விளக்கம்",
     },
   },
 };

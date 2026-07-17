@@ -15,6 +15,8 @@ import { KitchenInsights } from '@/components/kitchen-insights';
 import { Sparkles, ArrowLeft } from 'lucide-react';
 import { MealType } from '@/constants/preferences';
 import { InventoryItem } from '@/lib/inventory-manager';
+import { getRecipeById } from '@/lib/recipe-service';
+import { RecipeCard } from '@/components/recipe-card';
 
 export default function RecommendationPage() {
   const { t } = useLanguage();
@@ -23,8 +25,10 @@ export default function RecommendationPage() {
   const [ingredientsLoaded, setIngredientsLoaded] = useState(false);
   const [activeTab, setActiveTab] = useState<MealType>('breakfast');
   const [selectedRecIndex, setSelectedRecIndex] = useState(0);
+  const [showRecipe, setShowRecipe] = useState(false);
 
   const [prevActiveTab, setPrevActiveTab] = useState(activeTab);
+  const [prevSelectedRecIndex, setPrevSelectedRecIndex] = useState(selectedRecIndex);
 
   // Sync selected ingredients from localStorage safely
   useEffect(() => {
@@ -80,6 +84,12 @@ export default function RecommendationPage() {
   if (activeTab !== prevActiveTab) {
     setPrevActiveTab(activeTab);
     setSelectedRecIndex(0);
+    setShowRecipe(false);
+  }
+
+  if (selectedRecIndex !== prevSelectedRecIndex) {
+    setPrevSelectedRecIndex(selectedRecIndex);
+    setShowRecipe(false);
   }
 
   const isLoaded = preferencesLoaded && ingredientsLoaded;
@@ -87,6 +97,12 @@ export default function RecommendationPage() {
   
   // Selected recommendation
   const currentRecommendation = recommendations[selectedRecIndex];
+
+  // Fetch recipe details using service helper
+  const currentRecipe = useMemo(() => {
+    if (!currentRecommendation) return null;
+    return getRecipeById(currentRecommendation.meal.id);
+  }, [currentRecommendation]);
 
   // Compute kitchen intelligence insights on top of recommendation
   const insights = useMemo(() => {
@@ -159,6 +175,27 @@ export default function RecommendationPage() {
               {/* Top Recommendation details & Insights dashboard */}
               <div className="lg:col-span-8 space-y-6">
                 <RecommendationCard recommendation={currentRecommendation} />
+                
+                {/* Recipe toggle & details card */}
+                {currentRecipe && (
+                  <div className="space-y-4">
+                    <div className="flex justify-center">
+                      <button
+                        type="button"
+                        onClick={() => setShowRecipe(!showRecipe)}
+                        className="inline-flex items-center gap-2 px-5 py-2.5 border border-kitchen-clay/20 bg-kitchen-clay/5 hover:bg-kitchen-clay/10 text-xs font-extrabold text-kitchen-clay rounded-lg transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-kitchen-clay/40 w-full justify-center"
+                      >
+                        <span>{showRecipe ? t.recipe.hideRecipe : t.recipe.showRecipe}</span>
+                      </button>
+                    </div>
+
+                    {showRecipe && (
+                      <div className="animate-in fade-in slide-in-from-top-4 duration-300">
+                        <RecipeCard recipe={currentRecipe} selectedIngredientIds={selectedIngredients} />
+                      </div>
+                    )}
+                  </div>
+                )}
                 
                 {insights && (
                   <div className="space-y-4 pt-2">
