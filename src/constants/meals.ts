@@ -13,7 +13,7 @@ export const meals: Meal[] = [
   {
     id: 'idli_sambar',
     en: 'Idli with Sambar',
-    ta: 'சாம்பார் இட்லி',
+    ta: 'இட்லி மற்றும் சாம்பார்',
     mealTypes: ['breakfast'],
     diet: 'veg',
     cookingTime: '30m',
@@ -22,7 +22,7 @@ export const meals: Meal[] = [
   {
     id: 'plain_dosa',
     en: 'Plain Dosa with Coconut Chutney',
-    ta: 'தேங்காய் சட்னியுடன் கூடிய தோசை',
+    ta: 'தேங்காய் சட்னியுடன் தோசை',
     mealTypes: ['breakfast', 'dinner'],
     diet: 'veg',
     cookingTime: '15m',
@@ -103,7 +103,7 @@ export const meals: Meal[] = [
   {
     id: 'chappathi_kurma',
     en: 'Chapati with Veg Kurma',
-    ta: 'சப்பாத்தி வெஜிடபிள் குருமா',
+    ta: 'சப்பாத்தி காய்கறி குருமா',
     mealTypes: ['breakfast', 'dinner'],
     diet: 'veg',
     cookingTime: '60m',
@@ -195,7 +195,7 @@ export const meals: Meal[] = [
   {
     id: 'egg_curry_sadham',
     en: 'Egg Curry with Boiled Rice',
-    ta: 'முட்டை குழம்பு சாதம்',
+    ta: 'முட்டைக் குழம்பு சாதம்',
     mealTypes: ['lunch', 'dinner'],
     diet: 'non-veg',
     cookingTime: '30m',
@@ -231,7 +231,7 @@ export const meals: Meal[] = [
   {
     id: 'mor_kuzhambu_sadham',
     en: 'Ash Gourd Mor Kuzhambu with Rice',
-    ta: 'சாம்பல் பூசணி மோர் குழம்பு சாதம்',
+    ta: 'வெண்பூசணி மோர் குழம்பு சாதம்',
     mealTypes: ['lunch'],
     diet: 'veg',
     cookingTime: '30m',
@@ -267,7 +267,7 @@ export const meals: Meal[] = [
   {
     id: 'chana_masala_chapati',
     en: 'Chana Masala with Chapati',
-    ta: 'கொண்டைக்கடலை மசாலா மற்றும் சப்பாத்தி',
+    ta: 'சப்பாத்தி கொண்டைக்கடலை மசாலா',
     mealTypes: ['lunch', 'dinner'],
     diet: 'veg',
     cookingTime: '60m',
@@ -296,7 +296,7 @@ export const meals: Meal[] = [
   {
     id: 'paneer_butter_chapati',
     en: 'Paneer Butter Masala with Chapati',
-    ta: 'பனீர் பட்டர் மசாலா மற்றும் சப்பாத்தி',
+    ta: 'சப்பாத்தி பனீர் பட்டர் மசாலா',
     mealTypes: ['dinner'],
     diet: 'veg',
     cookingTime: '30m',
@@ -305,7 +305,7 @@ export const meals: Meal[] = [
   {
     id: 'tomato_roti',
     en: 'Tomato Kurma with Chapati',
-    ta: 'தக்காளி குருமா மற்றும் சப்பாத்தி',
+    ta: 'சப்பாத்தி தக்காளி குருமா',
     mealTypes: ['dinner'],
     diet: 'veg',
     cookingTime: '30m',
@@ -323,7 +323,7 @@ export const meals: Meal[] = [
   {
     id: 'potato_fry_chapati',
     en: 'Potato Poriyal with Chapati',
-    ta: 'உருளைக்கிழங்கு பொறியல் மற்றும் சப்பாத்தி',
+    ta: 'சப்பாத்தி உருளைக்கிழங்கு பொரியல்',
     mealTypes: ['dinner'],
     diet: 'veg',
     cookingTime: '30m',
@@ -368,7 +368,7 @@ export const meals: Meal[] = [
   {
     id: 'vegetable_kurma_parotta',
     en: 'Veg Kurma with Parotta',
-    ta: 'வெஜிடபிள் குருமா மற்றும் பரோட்டா',
+    ta: 'பரோட்டா காய்கறி குருமா',
     mealTypes: ['dinner'],
     diet: 'veg',
     cookingTime: '60m',
@@ -377,7 +377,7 @@ export const meals: Meal[] = [
   {
     id: 'chana_dal_roti',
     en: 'Dal Fry with Chapati',
-    ta: 'பருப்பு கடைசல் மற்றும் சப்பாத்தி',
+    ta: 'சப்பாத்தி பருப்பு கடைசல்',
     mealTypes: ['dinner'],
     diet: 'veg',
     cookingTime: '30m',
@@ -395,7 +395,7 @@ export const meals: Meal[] = [
   {
     id: 'egg_bhurji_chapati',
     en: 'Egg Bhurji with Chapati',
-    ta: 'முட்டை பொரியல் மற்றும் சப்பாத்தி',
+    ta: 'சப்பாத்தி முட்டை பொரியல்',
     mealTypes: ['dinner'],
     diet: 'non-veg',
     cookingTime: '30m',
@@ -404,7 +404,7 @@ export const meals: Meal[] = [
   {
     id: 'black_pepper_chicken_roti',
     en: 'Pepper Chicken with Chapati',
-    ta: 'மிளகு சிக்கன் மற்றும் சப்பாத்தி',
+    ta: 'சப்பாத்தி மிளகு சிக்கன்',
     mealTypes: ['dinner'],
     diet: 'non-veg',
     cookingTime: '60m',
@@ -413,7 +413,7 @@ export const meals: Meal[] = [
   {
     id: 'jeera_rice_dal',
     en: 'Jeera Rice with Dal Fry',
-    ta: 'சீரக சாதம் மற்றும் பருப்பு கடைசல்',
+    ta: 'சீரக சாதம் பருப்பு கடைசல்',
     mealTypes: ['dinner'],
     diet: 'veg',
     cookingTime: '30m',
